@@ -1,0 +1,546 @@
+/*
+ * This section primarily explains how Tailwind CSS is used.
+ * Most styling is applied directly in the HTML using Tailwind's utility classes.
+ *
+ * To use Tailwind CSS, we include its CDN in the HTML <head> section:
+ * <script src="https://cdn.tailwindcss.com"></script>
+ *
+ * This allows us to use classes like 'bg-gray-100', 'text-white', 'flex', 'rounded-xl', etc.,
+ * directly in our HTML elements.
+ */
+
+/* Custom styles for the Inter font */
+/* This is included inline in the HTML <style> tag for simplicity,
+ * but in a larger project, you would typically link an external CSS file. */
+body {
+    font-family: "Inter", sans-serif;
+}
+
+/* Smooth scrolling for anchor links */
+/* This is also included inline in the HTML <style> tag. */
+html {
+    scroll-behavior: smooth;
+}
+
+/*
+ * Below are examples of custom animations that could be added.
+ * For this portfolio, the animations are simple transitions and transforms
+ * provided by Tailwind CSS classes like `transition`, `duration-300`, `transform`, `hover:scale-105`,
+ * and `hover:-translate-y-2`.
+ *
+ * If you needed more complex animations, you would define them here:
+ */
+
+/* Example of a custom keyframe animation (not used in the current HTML, but for illustration) */
+/*
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-fade-in-down {
+    animation: fadeInDown 1s ease-out forwards;
+}
+*/
+
+/* General Resets & Base Styles */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Inter', sans-serif; /* Body font */
+    line-height: 1.6;
+    color: #1F2937; /* Dark charcoal for text */
+    background-color: #F0F4F8; /* Primary light, cool gray background */
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+h3 {
+    font-family: 'Outfit', sans-serif; /* Heading font */
+    
+    margin-bottom: 0.8em;
+    line-height: 1.2;
+}
+
+
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+
+
+
+
+h1 { font-size: 2.8em; }
+h2 { font-size: 2.2em; }
+h3 { font-size: 1.8em; }
+h4 { font-size: 1.3em; margin-bottom: 0.5em; } /* Added for list headings */
+
+p {
+    margin-bottom: 1em;
+}
+
+a {
+    color: #3B82F6; /* Vibrant blue for links */
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #2563EB; /* Darker blue on hover */
+}
+
+.accent-text {
+    color: #3B82F6; /* Vibrant blue accent */
+}
+
+/* Background for alternating sections */
+.about-section, .projects-section, .workshops-achievements-section { /* Added new section here */
+    background-color: #E4E7EB; /* Secondary light gray background */
+}
+
+.text-center {
+    text-align: center;
+}
+
+/* --- Buttons --- */
+.btn {
+    display: inline-block;
+    padding: 10px 25px;
+    border-radius: 5px;
+    font-weight: 600;
+    text-align: center;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
+    margin: 5px; /* Spacing between buttons */
+    white-space: nowrap; /* Prevents text wrapping in buttons */
+}
+
+
+
+
+
+/* --- Sections --- */
+section {
+    padding: 80px 0;
+}
+
+/* --- Hero Section --- */
+
+
+/* --- Skills Section --- */
+.skills-section {
+    background-color: #F0F4F8; /* Ensure it uses primary background if about uses secondary */
+}
+.skills-section h2 {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    text-align: center;
+}
+
+.skill-category {
+    background-color: #FFFFFF; /* White background for skill cards */
+    padding: 30px 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+.skill-category h3 {
+    color: #3B82F6;
+    font-size: 1.4em;
+    margin-bottom: 15px;
+}
+
+.skill-category ul {
+    list-style: none;
+    padding: 0;
+}
+
+.skill-category li {
+    padding: 5px 0;
+    font-size: 1.05em;
+    color: #374151;
+}
+
+/* --- Projects Section --- */
+.projects-section h2 {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.project-card {
+    background-color: #FFFFFF; /* White background for project cards */
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.project-card h3 {
+    color: #3B82F6;
+    margin-bottom: 10px;
+}
+
+.project-card p {
+    font-size: 0.95em;
+    color: #374151;
+    flex-grow: 1;
+    margin-bottom: 20px;
+}
+
+/* --- Contact Section --- */
+.contact-section {
+    text-align: center;
+    background-color: #F0F4F8; /* Ensure consistent primary background */
+}
+
+.contact-section h2 {
+    margin-bottom: 20px;
+}
+
+.contact-section p {
+    max-width: 600px;
+    margin: 0 auto 30px auto;
+}
+
+.contact-links {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.contact-links .btn {
+    min-width: 120px;
+}
+
+.small-text {
+    font-size: 0.9em;
+    color: #6B7280;
+}
+
+/* --- Footer --- */
+footer {
+    background-color: #1F2937;
+    color: #F9FAFB;
+    text-align: center;
+    padding: 25px 0;
+    font-size: 0.9em;
+}
+
+/* --- Workshops & Achievements Page Specific Styles --- */
+.workshops-achievements-section {
+    padding: 80px 0;
+    text-align: center; /* Center main heading */
+}
+
+.workshops-achievements-section h2 {
+    margin-bottom: 40px;
+}
+
+.category-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    text-align: left; /* Align text within cards to the left */
+}
+
+.category-card {
+    background-color: #FFFFFF;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+.category-card h3 {
+    color: #3B82F6;
+    margin-bottom: 20px;
+    text-align: center; /* Center card sub-headings */
+}
+
+.category-card ul {
+    list-style: none;
+    padding: 0;
+}
+
+.category-card li {
+    margin-bottom: 20px;
+    border-bottom: 1px dashed #E4E7EB; /* Subtle separator */
+    padding-bottom: 15px;
+}
+
+.category-card li:last-child {
+    border-bottom: none; /* No border for the last item */
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.category-card li h4 {
+    color: #1F2937;
+    margin-bottom: 5px;
+    font-size: 1.15em;
+}
+
+.category-card li p {
+    font-size: 0.95em;
+    color: #374151;
+    margin-bottom: 0;
+}
+
+
+/* ====================================
+   RESPONSIVE DESIGN (Media Queries)
+   ==================================== */
+
+/* --- Laptops & Desktops (Min-width 768px) --- */
+@media (min-width: 768px) {
+    h1 { font-size: 3.5em; }
+    h2 { font-size: 2.5em; }
+    h3 { font-size: 2em; }
+    h4 { font-size: 1.4em; }
+
+    /* Navbar - Desktop specific */
+    .hamburger {
+        display: none;
+    }
+
+    .navbar nav ul {
+        display: flex;
+        position: static;
+        background-color: transparent;
+        flex-direction: row;
+        width: auto;
+        padding: 0;
+        transform: translateX(0);
+    }
+
+    .hero-section .container {
+        flex-direction: column;
+        text-align: center;
+        padding: 150px 0;
+    }
+
+    .hero-content {
+        max-width: 900px;
+    }
+
+    .navbar nav ul li {
+        margin-left: 30px;
+    }
+
+    .skills-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .project-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    /* Workshops & Achievements specific for desktop */
+    .category-grid {
+        grid-template-columns: repeat(2, 1fr); /* Two columns on desktop */
+    }
+}
+
+
+/* --- Tablets (Min-width 481px and Max-width 767px) --- */
+@media (min-width: 481px) and (max-width: 767px) {
+    h1 { font-size: 2.5em; }
+    h2 { font-size: 2em; }
+    h3 { font-size: 1.6em; }
+    h4 { font-size: 1.2em; }
+
+    section {
+        padding: 60px 0;
+    }
+
+    .container {
+        padding: 0 15px;
+    }
+
+    .navbar .logo {
+        font-size: 1.3em;
+    }
+
+    /* Hamburger and Mobile Nav for Tablets */
+    .hamburger {
+        display: block;
+    }
+
+    .navbar nav ul {
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: #FFFFFF;
+        border-top: 1px solid #E0E0E0;
+        box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+        transform: translateX(-100%);
+        transition: transform 0.3s ease-in-out;
+        z-index: 999;
+        padding: 20px 0;
+    }
+
+    .navbar nav ul.active {
+        transform: translateX(0);
+    }
+
+    .navbar nav ul li {
+        margin: 0;
+        text-align: center;
+        padding: 10px 0;
+    }
+
+    .navbar nav ul li a {
+        display: block;
+        font-size: 1.1em;
+        padding: 10px;
+    }
+
+    .navbar nav ul li a::after {
+        display: none;
+    }
+
+    .skills-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .project-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .hero-section h1 {
+        font-size: 2.8em;
+    }
+
+    .hero-section .tagline {
+        font-size: 1.3em;
+    }
+
+    /* Workshops & Achievements specific for tablet */
+    .category-grid {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+/* --- Phones (Max-width 480px) --- */
+@media (max-width: 480px) {
+    h1 { font-size: 2.2em; }
+    h2 { font-size: 1.8em; }
+    h3 { font-size: 1.4em; }
+    h4 { font-size: 1.1em; }
+
+    section {
+        padding: 50px 0;
+    }
+
+    .container {
+        padding: 0 15px;
+    }
+
+    /* Navbar - Stacked for small screens */
+    .hamburger {
+        display: block;
+    }
+
+    .navbar nav ul {
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: #FFFFFF;
+        border-top: 1px solid #E0E0E0;
+        box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+        transform: translateX(-100%);
+        transition: transform 0.3s ease-in-out;
+        z-index: 999;
+        padding: 20px 0;
+    }
+
+    .navbar nav ul.active {
+        transform: translateX(0);
+    }
+
+    .navbar nav ul li {
+        margin: 0;
+        text-align: center;
+        padding: 10px 0;
+    }
+
+    .navbar nav ul li a {
+        display: block;
+        font-size: 1.1em;
+        padding: 10px;
+    }
+    .navbar nav ul li a::after {
+        display: none;
+    }
+
+    .hero-section {
+        padding: 80px 0 50px 0;
+    }
+
+    .btn {
+        width: 100%;
+        margin: 5px 0;
+    }
+
+    .contact-links {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    /* Workshops & Achievements specific for phone */
+    .category-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.certficate-heading{
+    
+    font-weight:700;
+    font-size:20px;
+}
+.certficate-section{
+    font-weight: 700;
+    font-size:25px;
+}
